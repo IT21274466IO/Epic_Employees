@@ -1,11 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
-   version="6.0">
+<web-app version="6.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
+    <servlet>
+        <servlet-name>EmployeLoginServlet</servlet-name>
+        <servlet-class>servlets.EmployeLoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EmployeeLoginServlet</servlet-name>
+        <servlet-class>servlets.EmployeeLoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EmployeeRegisterServlet</servlet-name>
+        <servlet-class>servlets.EmployeeRegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmployeLoginServlet</servlet-name>
+        <url-pattern>/EmployeLoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EmployeeLoginServlet</servlet-name>
+        <url-pattern>/EmployeeLoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EmployeeRegisterServlet</servlet-name>
+        <url-pattern>/EmployeeRegisterServlet</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    <welcome-file-list>
+        <welcome-file>
+            login.jsp
+        </welcome-file>
+    </welcome-file-list>
 </web-app>

@@ -12,29 +12,29 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <title>Login Page</title>
-        
+
         <style>
             .gradient-custom-2 {
                 background-image: url("https://www.epictechnology.lk/wp-content/uploads/2022/02/Website-Banner-4.0-Mobile.jpg");
                 background-size: cover;
-                background-repeat: no-repeat; 
-/*             fallback for old browsers 
-            background: #fccb90;
-
-             Chrome 10-25, Safari 5.1-6 
-            background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
-
-             W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ 
-            background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);*/
+                background-repeat: no-repeat;
+                /*             fallback for old browsers 
+                            background: #fccb90;
+                
+                             Chrome 10-25, Safari 5.1-6 
+                            background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+                
+                             W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ 
+                            background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);*/
             }
-            
+
             .epic-title-style-1 {
                 font-family: 'antonio';
                 font-weight: 900;
                 text-transform: uppercase;
                 color: #0666a0;
             }
-            
+
             .button-29 {
                 align-items: center;
                 appearance: none;
@@ -64,24 +64,24 @@
                 white-space: nowrap;
                 will-change: box-shadow,transform;
                 font-size: 18px;
-              }
+            }
 
-              .button-29:focus {
+            .button-29:focus {
                 box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-              }
+            }
 
-              .button-29:hover {
+            .button-29:hover {
                 box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
                 transform: translateY(-2px);
-              }
+            }
 
-              .button-29:active {
+            .button-29:active {
                 box-shadow: #3c4fe0 0 3px 7px inset;
                 transform: translateY(2px);
-              }    
+            }
         </style>
-        
-        
+
+
     </head>
     <body>
 
@@ -100,18 +100,20 @@
                                             <h4 class="mt-3 mb-5 epic-title-style-1">Welcome to EPIC!</h4>
                                         </div>
 
-                                        <form style="width: 23rem;">
+                                        <form style="width: 23rem;" class="needs-validation" novalidate>
 
                                             <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>
 
                                             <div class="form-outline mb-4">
-                                                <input type="email" id="form2Example18" class="form-control form-control-lg" />
+                                                <input type="email" id="form2Example18" class="form-control form-control-lg" required/>
                                                 <label class="form-label" for="form2Example18">Email address</label>
+                                                <div class="invalid-feedback">Please enter a valid email address.</div>
                                             </div>
 
                                             <div class="form-outline mb-4">
-                                                <input type="password" id="form2Example28" class="form-control form-control-lg" />
+                                                <input type="password" id="form2Example28" class="form-control form-control-lg" required/>
                                                 <label class="form-label" for="form2Example28">Password</label>
+                                                <div class="invalid-feedback">Please enter your password.</div>
                                             </div>
 
                                             <div class="pt-1 mb-4">
@@ -119,7 +121,8 @@
                                             </div>
 
                                             <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
-                                            <p>Don't have an account? <a href="#!" class="link-info">Register here</a></p>
+                                            <p>Don't have an account? <a href="registration.jsp" class="link-info">Register here</a></p>
+                                            <p>Don't have an account? <a href="dashboard.jsp" class="link-info">Register here</a></p>
 
                                         </form>
 
@@ -137,6 +140,22 @@
                 </div>
             </div>
         </section>
+        <script>
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation');
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                    .forEach(function (form) {
+                        form.addEventListener('submit', function (event) {
+                            if (!form.checkValidity()) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                        }, false);
+                    });
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    
     </body>
 </html>
