@@ -181,7 +181,7 @@
                                                 <div class="invalid-feedback">Please enter a valid email address.</div>
                                             </div>
                                             <div class="form-outline mb-4">
-                                                <input type="password" id="password" class="form-control form-control-lg" required/>
+                                                <input type="password" id="password" name="password" class="form-control form-control-lg" required/>
                                                 <label class="form-label" for="password">Password</label>
                                                 <div class="invalid-feedback">Please enter your password.</div>
                                             </div>

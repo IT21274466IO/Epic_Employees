@@ -18,7 +18,7 @@ public class DBConnection {
     
     private static final String URL = "jdbc:mysql://localhost:3306/employee_management";
     private static final String USER = "root";
-    private static final String PASSWORD = "123456";
+    private static final String PASSWORD = "MYSQL#12345ok";
     
     private static Connection con;
     
