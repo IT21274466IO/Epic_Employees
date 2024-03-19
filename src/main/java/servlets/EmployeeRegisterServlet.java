@@ -91,7 +91,7 @@ public class EmployeeRegisterServlet extends HttpServlet {
 
             if (isEmployeeSaved) {
                 // Redirect to success page
-                response.sendRedirect("index.jsp");
+                response.sendRedirect("login.jsp");
             } else {
                 // Redirect to error page
                 response.sendRedirect("error.jsp");

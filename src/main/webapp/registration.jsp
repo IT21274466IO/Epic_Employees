@@ -58,7 +58,7 @@
                     <div class="form-container">
                         <!--                <img src="https://www.epictechnology.lk/wp-content/uploads/2019/03/epic-lanka-logo.png" alt="logo" class="mx-auto d-block">-->
                         <h4>Welcome to EPIC!</h4>
-                        <form action="/submit_employee_info" method="POST" enctype="multipart/form-data">
+                        <form action="EmployeeRegisterServlet" method="POST" enctype="multipart/form-data">
                             <div class="row mb-3">
                                 <div class="col">
                                     <label for="firstname" class="form-label">First Name</label>

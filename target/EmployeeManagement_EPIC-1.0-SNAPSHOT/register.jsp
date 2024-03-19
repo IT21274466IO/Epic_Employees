@@ -92,91 +92,108 @@
                                 <div class="col-xl-6">
                                     <div class="card-body p-md-5 text-black">
                                         <h3 class="mb-5 text-uppercase">Employee registration form</h3>
-                                        <div class="row">
-                                            <div class="col-md-6 mb-4">
-                                                <div class="form-outline">
-                                                    <input type="text" id="firstName" name="firstName" class="form-control form-control-lg" />
-                                                    <label class="form-label" for="firstName">First name</label>
+                                        <form action="EmployeeRegisterServlet" method="post" class="needs-validation" novalidate>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-4">
+                                                    <div class="form-outline">
+                                                        <input type="text" id="firstName" name="firstName" class="form-control form-control-lg" required />
+                                                        <label class="form-label" for="firstName">First name</label>
+                                                        <div class="invalid-feedback">First name is required.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-4">
+                                                    <div class="form-outline">
+                                                        <input type="text" id="lastName" name="lastName" class="form-control form-control-lg" required/>
+                                                        <label class="form-label" for="lastName">Last name</label>
+                                                        <div class="invalid-feedback">Last name is required.</div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 mb-4">
-                                                <div class="form-outline">
-                                                    <input type="text" id="lastName" name="lastName" class="form-control form-control-lg" />
-                                                    <label class="form-label" for="lastName">Last name</label>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-4">
+                                                    <div class="form-outline">
+                                                        <input type="text" id="mobileNo" name="mobileNo" class="form-control form-control-lg" required/>
+                                                        <label class="form-label" for="mobileNo">Mobile Number</label>
+                                                        <div class="invalid-feedback">Mobile number is required.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-4">
+                                                    <div class="form-outline">
+                                                        <input type="text" id="nic" name="nic" class="form-control form-control-lg" required/>
+                                                        <label class="form-label" for="nic">NIC</label>
+                                                        <div class="invalid-feedback">NIC is required.</div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6 mb-4">
-                                                <div class="form-outline">
-                                                    <input type="text" id="mobileNo" name="mobileNo" class="form-control form-control-lg" />
-                                                    <label class="form-label" for="mobileNo">Mobile Number</label>
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="address" name="address" class="form-control form-control-lg" required/>
+                                                <label class="form-label" for="address">Address</label>
+                                                <div class="invalid-feedback">Address is required.</div>
+
+                                            </div>
+                                            <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+                                                <h6 class="mb-0 me-4">Gender: </h6>
+                                                <div class="form-check form-check-inline mb-0 me-4">
+                                                    <input class="form-check-input" type="radio" id="female" name="gender"
+                                                           value="option1" required />
+                                                    <label class="form-check-label" for="female">Female</label>
+                                                </div>
+                                                <div class="form-check form-check-inline mb-0 me-4">
+                                                    <input class="form-check-input" type="radio" id="male" name="gender"
+                                                           value="option2" required />
+                                                    <label class="form-check-label" for="male">Male</label>
+                                                </div>
+                                                <div class="invalid-feedback invalid-gender" style="display: none; margin-top: 40px;">Please select the Gender</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-4">
+                                                    <label for="designation" class="form-label">Designation: </label>
+                                                    <select class="select form-control form-control-lg" id="designation" name="designation" required>
+                                                        <option value="">Select</option>
+                                                        <option value="Intern">Intern</option>
+                                                        <option value="ASE">ASE</option>
+                                                        <option value="SE">SE</option>
+                                                        <option value="SSE">SSE</option>
+                                                        <option value="ATL">ATL</option>
+                                                        <option value="TL">TL</option>
+                                                    </select>
+                                                    <div class="invalid-feedback invalid-designation" style="display: none;">Designation is required.</div>
+                                                </div>
+                                                <div class="col-md-6 mb-4">
+                                                    <label for="status" class="form-label">Status: </label>
+                                                    <select class="select form-control form-control-lg" id="status" name="status" required>
+                                                        <option value="">Select</option>
+                                                        <option value="Active">Active</option>
+                                                        <option value="Inactive">Inactive</option>
+                                                    </select>
+                                                    <div class="invalid-feedback invalid-status" style="display: none;">Status is required.</div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 mb-4">
-                                                <div class="form-outline">
-                                                    <input type="text" id="nic" name="nic" class="form-control form-control-lg" />
-                                                    <label class="form-label" for="nic">NIC</label>
-                                                </div>
+
+                                            <div class="form-outline mb-4">
+                                                <label for="dob" class="form-label">Date of Birth</label>
+                                                <input type="date" id="dob" name="dob" class="form-control form-control-lg" required/>
+                                                <div class="invalid-feedback">Date of Birth is required.</div>
                                             </div>
-                                        </div>
-                                        <div class="form-outline mb-4">
-                                            <input type="text" id="address" name="address" class="form-control form-control-lg" />
-                                            <label class="form-label" for="address">Address</label>
-                                        </div>
-                                        <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
-                                            <h6 class="mb-0 me-4">Gender: </h6>
-                                            <div class="form-check form-check-inline mb-0 me-4">
-                                                <input class="form-check-input" type="radio" id="female" name="gender"
-                                                       value="option1" />
-                                                <label class="form-check-label" for="female">Female</label>
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="email" name="email" class="form-control form-control-lg" required/>
+                                                <label class="form-label" for="email">Email ID</label>
+                                                <div class="invalid-feedback">Please enter a valid email address.</div>
                                             </div>
-                                            <div class="form-check form-check-inline mb-0 me-4">
-                                                <input class="form-check-input" type="radio" id="male" name="gender"
-                                                       value="option2" />
-                                                <label class="form-check-label" for="male">Male</label>
+                                            <div class="form-outline mb-4">
+                                                <input type="password" id="password" class="form-control form-control-lg" required/>
+                                                <label class="form-label" for="password">Password</label>
+                                                <div class="invalid-feedback">Please enter your password.</div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6 mb-4">
-                                                <label for="designation" class="form-label">Designation: </label>
-                                                <select class="select form-control form-control-lg" id="designation" name="designation">
-                                                    <option value="Intern">Intern</option>
-                                                    <option value="ASE">ASE</option>
-                                                    <option value="SE">SE</option>
-                                                    <option value="SSE">SSE</option>
-                                                    <option value="ATL">ATL</option>
-                                                    <option value="TL">TL</option>
-                                                </select>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label" for="profileImage">Upload your Profile Picture</label>
+                                                <input type="file" class="form-control form-control-lg" id="profileImage" name="profileImage"/>
                                             </div>
-                                            <div class="col-md-6 mb-4">
-                                                <label for="status" class="form-label">Status: </label>
-                                                <select class="select form-control form-control-lg" id="status" name="status">
-                                                    <option value="Active">Active</option>
-                                                    <option value="Inactive">Inactive</option>
-                                                </select>
+                                            <div class="d-flex justify-content-end pt-3">
+                                                <button type="button" class="btn btn-light btn-lg" onclick="resetForm()">Reset all</button>
+                                                <button type="submit" class="btn btn-warning btn-lg ms-2">Submit form</button>
                                             </div>
-                                        </div>
-                                        <div class="form-outline mb-4">
-                                            <label for="dob" class="form-label">Date of Birth</label>
-                                            <input type="date" id="dob" name="dob" class="form-control form-control-lg" />
-                                        </div>
-                                        <div class="form-outline mb-4">
-                                            <input type="text" id="email" name="email" class="form-control form-control-lg" />
-                                            <label class="form-label" for="email">Email ID</label>
-                                        </div>
-                                        <div class="form-outline mb-4">
-                                            <input type="password" id="password" class="form-control form-control-lg" />
-                                            <label class="form-label" for="password">Password</label>
-                                        </div>
-                                        <div class="form-outline mb-4">
-                                            <label class="form-label" for="profileImage">Upload your Profile Picture</label>
-                                            <input type="file" class="form-control form-control-lg" id="profileImage" name="profileImage" />
-                                        </div>
-                                        <div class="d-flex justify-content-end pt-3">
-                                            <button type="button" class="btn btn-light btn-lg" onclick="resetForm()">Reset all</button>
-                                            <button type="button" class="btn btn-warning btn-lg ms-2">Submit form</button>
-                                        </div>
+                                        </form>       
                                     </div>
                                 </div>
                             </div>
@@ -205,13 +222,7 @@
                 document.getElementById("mobileNo").value = "";
                 document.getElementById("nic").value = "";
                 document.getElementById("address").value = "";
-                document.getElementById("female").value = "";
-                document.getElementById("male").value = "";
-                document.getElementById("designation").value = "";
-                document.getElementById("status").value = "";
                 document.getElementById("dob").value = "";
-                document.getElementById("email").value = "";
-                document.getElementById("password").value = "";
                 // Clear file input
                 var fileInput = document.getElementById('profileImage');
                 fileInput.value = '';
@@ -232,7 +243,51 @@
                     handleInputBlur(this);
                 });
             });
+
+            var forms = document.querySelectorAll('.needs-validation');
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                    .forEach(function (form) {
+                        form.addEventListener('submit', function (event) {
+                            var genderInputs = document.querySelectorAll('input[name="gender"]');
+                            var genderSelected = false;
+                            genderInputs.forEach(function (input) {
+                                if (input.checked) {
+                                    genderSelected = true;
+                                }
+                            });
+
+                            var designation = document.getElementById('designation').value;
+                            var status = document.getElementById('status').value;
+
+                            if (!form.checkValidity() || !genderSelected || designation === '' || status === '') {
+                                event.preventDefault();
+                                event.stopPropagation();
+
+                                if (!genderSelected) {
+                                    document.querySelector('.invalid-gender').style.display = 'block';
+                                } else {
+                                    document.querySelector('.invalid-gender').style.display = 'none';
+                                }
+
+                                if (designation === '') {
+                                    document.querySelector('.invalid-designation').style.display = 'block';
+                                } else {
+                                    document.querySelector('.invalid-designation').style.display = 'none';
+                                }
+
+                                if (status === '') {
+                                    document.querySelector('.invalid-status').style.display = 'block';
+                                } else {
+                                    document.querySelector('.invalid-status').style.display = 'none';
+                                }
+                            }
+                            form.classList.add('was-validated');
+                        }, false);
+                    });
         </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>  
     </body>
 </html>
 
